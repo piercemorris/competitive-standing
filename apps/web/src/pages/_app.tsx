@@ -1,7 +1,8 @@
+import { AppProps } from 'next/app';
 import "../../styles/globals.css"
 
-import Web from './index'
+function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />
+}
 
-const Index = () => <Web />
-
-export default Index;
+export default MyApp
