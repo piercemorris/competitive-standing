@@ -1,10 +1,10 @@
-import { Button } from "ui";
-
-export default function Web() {
+export default function Index() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Web</h1>
-      <Button />
+    <div className="flex h-screen flex-col justify-center items-center">
+      <h1 className="text-3xl font-bold underline">Competitive standing</h1>
+      <div>
+        <span>Pierce</span><span>Josh</span>
+      </div>
     </div>
   );
 }
