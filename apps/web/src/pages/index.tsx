@@ -1,33 +1,41 @@
-import PlayerSection from "ui/HeadToHead/PlayerSection";
+import HeadToHeadSection from "ui/HeadToHead/HeadToHeadSection";
 
 export default function Index() {
 
-  const data = [
+  const games = [
     {
+      id: 0,
       player: {
+        id: 0,
         name: "Pierce",
         score: 0
       },
       opponent: {
+        id: 1,
         name: "Josh",
+        score: 0
+      }
+    },
+    {
+      id: 1,
+      player: {
+        id: 2,
+        name: "Stephen",
+        score: 0
+      },
+      opponent: {
+        id: 3,
+        name: "Fabs",
         score: 0
       }
     }
   ]
 
-  const gameEnd = (name: string) => {
-    console.log(`${name} wins!`)
-  }
-
   return (
     <div className="flex h-screen flex-col items-center mt-20">
       <h1 className="text-3xl font-bold underline">Competitive standing</h1>
-      <div className="m-10">
-        <div className="flex flex-row w-96 justify-between bg-slate-100">
-          <PlayerSection isVictorious={gameEnd} player={data[0].player} />
-          <span>-</span>
-          <PlayerSection isVictorious={gameEnd} player={data[0].opponent} challenger />
-        </div>
+      <div className="mt-10">
+        { games.map(game => <HeadToHeadSection key={game.id} game={game} />) }
       </div>
     </div>
   );

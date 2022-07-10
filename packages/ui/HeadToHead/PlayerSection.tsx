@@ -1,22 +1,24 @@
-import { MouseEvent } from "react";
+import { useState } from "react";
 import { Player } from "../types";
 
 type PlayerSectionProps = {
-  isVictorious: (event: string) => void;
   player: Player,
   challenger?: Boolean
 };
 
-export default function PlayerSection({ isVictorious, player, challenger }: PlayerSectionProps) {
+export default function PlayerSection({ player, challenger }: PlayerSectionProps) {
+  const [score, setScore] = useState(player.score)
+  const win = () => setScore(prev => prev+1)
+
   return (
     <div 
-      onClick={() => isVictorious(player.name)}
+      onClick={() => win()}
       className={
-        `flex ${challenger ? "flex-row-reverse" : "flex-row"} 
+        `flex ${challenger ? "flex-row" : "flex-row-reverse"} 
         flex-grow w-auto justify-between cursor-pointer`
       }>
       <span>{player.name}</span>
-      <span>{player.score}</span>
+      <span>{score}{challenger ? <span>-</span> : null}</span>
     </div>
   )
 }
