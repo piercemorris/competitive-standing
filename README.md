@@ -39,6 +39,12 @@ cd my-turborepo
 npm run dev
 ```
 
+Installing packages for a specific workspace
+
+```
+npm install <package> -w=<workspace>
+```
+
 ## Useful Links
 
 Learn more about the power of Turborepo:
