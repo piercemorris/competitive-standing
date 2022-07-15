@@ -1,11 +1,11 @@
 {
   "extends": "tsconfig/google.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@src/*": ["~/*"]
-    }
+    "rootDir": ".",
+    "outDir": "build",
   },
-  "include": ["**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ]
 }
