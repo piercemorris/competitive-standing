@@ -6,6 +6,8 @@ MVP: Digitalising 1 vs. 1 matches in a office/casual setting, contribute by foll
 
 The project is a monorepo based off [turborepo](https://turborepo.org/) which accomodates for multiple apps to coexist in a single repository.
 
+Docker is necessary to locally connect to the postgres instance, install [here](https://docs.docker.com/get-docker/)
+
 ### Apps and Packages
 
 - `web`: a [Next.js](https://nextjs.org) app
@@ -38,6 +40,8 @@ To develop all apps and packages, run the following command:
 cd my-turborepo
 npm run dev
 ```
+
+PG Admin is [hosted locally](http://localhost:8081/) as a DB GUI
 
 Installing packages for a specific workspace
 

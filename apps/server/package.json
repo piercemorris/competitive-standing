@@ -11,7 +11,7 @@
   "keywords": [],
   "scripts": {
     "start": "functions-framework --source=build/src/ --target=helloWorld",
-    "dev": "concurrently \"tsc -w\" \"nodemon --watch ./build/ --exec npm run start\"",
+    "dev": "concurrently \"tsc -w\" \"nodemon --watch ./build/ --exec npm run start\" \"docker-compose up\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "gts lint",
     "clean": "gts clean",

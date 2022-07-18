@@ -1,10 +1,13 @@
 import type { HttpFunction } from '@google-cloud/functions-framework/build/src/functions';
-import { Pool } from 'pg';
+import { Pool, PoolConfig } from 'pg';
 
-const credentials = {
-  user: "piercemorris",
+// TODO: differentiate between dev + prod
+// TODO: add DB initialise script
+
+const credentials: PoolConfig = { 
   host: "localhost",
-  database: "competitive-standing",
+  database: "postgres",
+  password: "secret",
   port: 5432,
 };
 
