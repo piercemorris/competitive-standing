@@ -11,7 +11,8 @@
   "keywords": [],
   "scripts": {
     "start": "functions-framework --source=build/src/ --target=helloWorld",
-    "dev": "concurrently \"tsc -w\" \"nodemon --watch ./build/ --exec npm run start\" \"docker-compose up\"",
+    "dev": "concurrently \"tsc -w\" \"nodemon --watch ./build/ --exec npm run start\" \"docker-compose up\" \"npm run db-init\"",
+    "db-init": "docker exec -i postgres_container psql postgres admin < schema/schema.sql",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "gts lint",
     "clean": "gts clean",
